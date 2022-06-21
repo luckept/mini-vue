@@ -4,4 +4,6 @@
 
 # Tasking
 
-- [ ] 实现 reactive
+- [x] 实现 reactive
+- [ ] 实现 依赖收集 track
+- [ ] 实现 依赖触发 trigger
