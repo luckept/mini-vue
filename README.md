@@ -8,4 +8,5 @@
 - [x] 实现 依赖收集 track
 - [x] 实现 依赖触发 trigger
 - [x] 完善 effect.runner
-- [ ] 实现 effect.scheduler
+- [x] 实现 effect.scheduler
+- [ ] 实现 effect.stop
