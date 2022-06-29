@@ -9,4 +9,5 @@
 - [x] 实现 依赖触发 trigger
 - [x] 完善 effect.runner
 - [x] 实现 effect.scheduler
-- [ ] 实现 effect.stop
+- [x] 实现 effect.stop
+- [ ] 实现 readonly
