@@ -10,4 +10,4 @@
 - [x] 完善 effect.runner
 - [x] 实现 effect.scheduler
 - [x] 实现 effect.stop
-- [ ] 实现 readonly
+- [x] 实现 readonly
