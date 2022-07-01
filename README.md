@@ -11,3 +11,4 @@
 - [x] 实现 effect.scheduler
 - [x] 实现 effect.stop
 - [x] 实现 readonly
+- [ ] 实现 isReactive 和 isReadonly
