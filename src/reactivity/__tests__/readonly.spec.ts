@@ -1,13 +1,15 @@
-import { readonly } from '../reactive'
+import { readonly, isReadonly } from '../reactive'
 
 describe('readonly', () => {
   it('happy path', () => {
     // not set
-    const original = { foo: 1, bar: { baz: 2 }}
+    const original = { foo: 1, bar: { baz: 2 } }
     const wrapped = readonly(original)
     expect(wrapped).not.toBe(original)
-    expect(wrapped.foo).toBe(1 )
-  });
+    expect(isReadonly(wrapped)).toBe(true)
+    expect(isReadonly(original)).toBe(false)
+    expect(wrapped.foo).toBe(1)
+  })
 
   it('warn when call set', () => {
     // console.warn()
@@ -15,11 +17,11 @@ describe('readonly', () => {
     console.warn = jest.fn()
 
     const user = readonly({
-      age: 10
+      age: 10,
     })
-    
+
     user.age = 11
 
     expect(console.warn).toBeCalled()
   })
-});
+})

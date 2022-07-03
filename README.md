@@ -12,4 +12,5 @@
 - [x] 实现 effect.stop
 - [x] 实现 readonly
 - [x] 实现 isReactive
-- [ ] 实现 isReadonly
+- [x] 实现 isReadonly
+- [ ] 优化 stop 功能
