@@ -13,4 +13,5 @@
 - [x] 实现 readonly
 - [x] 实现 isReactive
 - [x] 实现 isReadonly
-- [ ] 优化 stop 功能
+- [x] 优化 stop 功能
+- [ ] 实现 reactive 和 readonly 嵌套对象转换功能

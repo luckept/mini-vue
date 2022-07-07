@@ -4,10 +4,10 @@ import { effect, stop } from '../effect'
 describe('effect', () => {
   it('happy path', () => {
     const user = reactive({
-      age: 10
+      age: 10,
     })
     let nextAge
-    
+
     effect(() => {
       nextAge = user.age + 1
     })
@@ -17,12 +17,12 @@ describe('effect', () => {
     user.age++
     expect(nextAge).toBe(12)
   })
-  
+
   it('should return runner when call effect', () => {
     // 1. effect(fn) 会返回一个 function，我们称之为 runner，当调用该 runner，它会再次执行传给 effect 内部的 fn，并且拿到该 fn 的返回值
     let foo = 10
     const runner = effect(() => {
-      foo ++
+      foo++
       return 'foo'
     })
     expect(foo).toBe(11)
@@ -30,7 +30,7 @@ describe('effect', () => {
     const r = runner()
     expect(foo).toBe(12)
     expect(r).toBe('foo')
-  });
+  })
 
   it('scheduler', () => {
     // 1. 通过 effect 的第二个参数给定的一个 scheduler 的fn
@@ -46,9 +46,9 @@ describe('effect', () => {
     const runner = effect(
       () => {
         dummy = obj.foo
-      }, 
+      },
       {
-        scheduler
+        scheduler,
       }
     )
     expect(scheduler).not.toHaveBeenCalled()
@@ -62,7 +62,7 @@ describe('effect', () => {
     run()
     // should have run
     expect(dummy).toBe(2)
-  });
+  })
 
   it('stop', () => {
     let dummy
@@ -73,17 +73,18 @@ describe('effect', () => {
     obj.prop = 2
     expect(dummy).toBe(2)
     stop(runner)
-    obj.prop = 3
+    // obj.prop = 3
+    obj.prop++
     expect(dummy).toBe(2)
 
     // stopped effect should still be manually callable
     runner()
     expect(dummy).toBe(3)
-  });
+  })
 
   it('onStop', () => {
     const obj = reactive({
-      foo: 1
+      foo: 1,
     })
     const onStop = jest.fn()
     let dummy
@@ -92,12 +93,11 @@ describe('effect', () => {
         dummy = obj.foo
       },
       {
-        onStop
+        onStop,
       }
     )
 
     stop(runner)
     expect(onStop).toBeCalledTimes(1)
-  });
-});
-
+  })
+})
