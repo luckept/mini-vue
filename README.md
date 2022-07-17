@@ -16,4 +16,5 @@
 - [x] 优化 stop 功能
 - [x] 实现 reactive 和 readonly 嵌套对象转换功能
 - [x] 实现 shallowReadonly 功能
-- [ ] 实现 isProxy 功能
+- [x] 实现 isProxy 功能
+- [ ] 实现 ref 功能
