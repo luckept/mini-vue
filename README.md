@@ -23,4 +23,5 @@
 - [x] 实现 computed 计算属性
 - [x] 实现初始化 component 主流程
 - [x] 使用 rollup 打包库
-- [ ] 实现初始化 element 主流程
+- [x] 实现初始化 element 主流程
+- [ ] 实现组件代理对象
