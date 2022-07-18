@@ -6,8 +6,9 @@ export function render(vnode, rootContainer) {
 
 function patch(vnode, rootContainer) {
   // 去处理组件
-
+  // TODO 判断 vnode 是不是一个 elment
   // 判断是不是 element，是的话去 mountElement
+  // processElement()
   processComponent(vnode, rootContainer)
 }
 

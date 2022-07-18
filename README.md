@@ -22,4 +22,5 @@
 - [x] 实现 proxyRefs 功能
 - [x] 实现 computed 计算属性
 - [x] 实现初始化 component 主流程
-- [ ] 使用 rollup 打包库
+- [x] 使用 rollup 打包库
+- [ ] 实现初始化 element 主流程
