@@ -10,6 +10,15 @@ export const App = {
       {
         id: 'root',
         class: ['red', 'hard'],
+        onClick() {
+          console.log('click')
+        },
+        onMousedown() {
+          console.log('mousedown')
+        },
+        onMouseover() {
+          console.log('mouseover')
+        },
       },
       'hi ' + this.msg
       // string 类型
