@@ -28,4 +28,5 @@
 - [x] 实现 shapeFlags
 - [x] 实现注册事件功能
 - [x] 实现组件 props 功能
-- [ ] 实现组件 emit 功能
+- [x] 实现组件 emit 功能
+- [ ] 实现组件 slots 功能
