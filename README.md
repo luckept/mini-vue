@@ -24,4 +24,5 @@
 - [x] 实现初始化 component 主流程
 - [x] 使用 rollup 打包库
 - [x] 实现初始化 element 主流程
-- [ ] 实现组件代理对象
+- [x] 实现组件代理对象
+- [ ] 实现 shapeFlags
