@@ -25,4 +25,5 @@
 - [x] 使用 rollup 打包库
 - [x] 实现初始化 element 主流程
 - [x] 实现组件代理对象
-- [ ] 实现 shapeFlags
+- [x] 实现 shapeFlags
+- [ ] 实现注册事件功能

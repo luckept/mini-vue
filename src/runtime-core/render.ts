@@ -1,4 +1,4 @@
-import { isObject } from './../shared/index'
+import { ShapeFlags } from '../shared/ShapeFlags'
 import { createComponentInstance, setupComponent } from './component'
 
 export function render(vnode, rootContainer) {
@@ -8,9 +8,11 @@ export function render(vnode, rootContainer) {
 function patch(vnode, rootContainer) {
   // 去处理组件
   // 判断是不是 element，是的话去 mountElement
-  if (typeof vnode.type === 'string') {
+  // shapeFlags 它可以标识
+  const { ShapeFlag } = vnode
+  if (ShapeFlag & ShapeFlags.ELEMENT) {
     processElement(vnode, rootContainer)
-  } else if (isObject(vnode.type)) {
+  } else if (ShapeFlag & ShapeFlags.STATEFUL_COMPONENT) {
     processComponent(vnode, rootContainer)
   }
 }
@@ -22,10 +24,12 @@ function processElement(vnode: any, rootContainer: any) {
 
 function mountElement(vnode: any, rootContainer: any) {
   const el = (vnode.el = document.createElement(vnode.type))
-  const { props, children } = vnode
-  if (typeof children === 'string') {
+  const { props, children, ShapeFlag } = vnode
+  // text_children
+  if (ShapeFlag & ShapeFlags.TEXT_CHILDREN) {
     el.textContent = children
-  } else if (Array.isArray(children)) {
+  } else if (ShapeFlag & ShapeFlags.ARRAY_CHILDREN) {
+    // array_children
     mountChildren(vnode, el)
   }
   for (const key in props) {
