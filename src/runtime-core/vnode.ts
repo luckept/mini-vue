@@ -16,6 +16,13 @@ export function createVnode(type, props?, children?) {
   } else if (Array.isArray(children)) {
     vnode.ShapeFlag |= ShapeFlags.ARRAY_CHILDREN
   }
+
+  // 组件类型，并且它的 children 必须是一个组件类型
+  if (vnode.ShapeFlag & ShapeFlags.STATEFUL_COMPONENT) {
+    if (typeof children === 'object') {
+      vnode.ShapeFlag |= ShapeFlags.SLOT_CHILDREN
+    }
+  }
   return vnode
 }
 
