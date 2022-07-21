@@ -7,7 +7,7 @@ export const Foo = {
   render() {
     const age = 20
     const foo = h('p', {}, 'Foo')
-    return h('div', {}, [
+    return h('p', {}, [
       renderSlots(this.$slots, 'header', {
         age,
       }),
