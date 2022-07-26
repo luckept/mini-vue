@@ -34,4 +34,5 @@
 - [x] 实现 getCurrentInstance
 - [x] 实现 provide-inject 功能
 - [x] 实现自定义渲染器 custom renderer
-- [ ] 渲染 canvas
+- [x] 渲染 canvas
+- [ ] 更新 element 流程搭建
