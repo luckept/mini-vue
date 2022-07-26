@@ -32,4 +32,5 @@
 - [x] 实现组件 slots 功能
 - [x] 实现 Fragment 和 Text 类型节点
 - [x] 实现 getCurrentInstance
-- [ ] 实现 provide-inject 功能
+- [x] 实现 provide-inject 功能
+- [ ] 实现自定义渲染器 custom renderer
