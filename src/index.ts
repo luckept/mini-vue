@@ -1,2 +1,2 @@
 // mini-vue 入口
-export * from './runtime-core/index'
+export * from './runtime-dom'
