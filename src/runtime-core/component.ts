@@ -1,3 +1,4 @@
+import { proxyRefs } from '../reactivity'
 import { shallowReadonly } from '../reactivity/reactive'
 import { emit } from './componentEmit'
 import { initProps } from './componentProps'
@@ -5,7 +6,7 @@ import { PublicInstanceProxyHandlers } from './componentPublicInstance'
 import { initSlots } from './componentSlots'
 
 export function createComponentInstance(vnode, parent) {
-  console.log('parent', parent)
+  // console.log('parent', parent)
   const component = {
     vnode,
     type: vnode.type,
@@ -14,7 +15,9 @@ export function createComponentInstance(vnode, parent) {
     emit: () => {},
     slots: {},
     parent,
+    subTree: {},
     provides: parent ? parent.provides : {},
+    isMounted: false,
   }
   component.emit = emit.bind(null, component) as any
   return component
@@ -50,7 +53,7 @@ function handleSetupResult(instance, setupResult: any) {
   // function Object
   // TODO function
   if (typeof setupResult === 'object') {
-    instance.setupState = setupResult
+    instance.setupState = proxyRefs(setupResult)
   }
 
   finishComponentSetup(instance)

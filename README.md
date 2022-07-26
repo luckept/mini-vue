@@ -35,4 +35,5 @@
 - [x] 实现 provide-inject 功能
 - [x] 实现自定义渲染器 custom renderer
 - [x] 渲染 canvas
-- [ ] 更新 element 流程搭建
+- [x] 更新 element 流程搭建
+- [ ] 更新 element 的 props
